@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+html,body{
+    height: 100%;
+}
+
+main{
+    padding: 6%;
+    width: 100%;
+    height: 100%;   
+    background-image: url('../img/5402594.png');
+    background-size: cover;
+    background-position: center;
+}
+
+main section.acessar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Mantenha a borda aqui */
+  border: #fff 1px solid;
+  /* Remova o filtro de desfoque daqui */
+  position: relative; /* Essencial para o posicionamento do pseudo-elemento */
+  overflow: hidden; /* Garante que o desfoque não vaze para fora da borda */
+    backdrop-filter: blur(20px); /* O efeito de glassmorphism em si */
+}
+
+section.acessar h1{
+    font-size: clamp(3.5rem, 6vw, 6.5rem);
+    font-family: "Pacifico", cursive;
+    color: #9200be;
+    line-height: clamp(3.5rem, 6vw, 6.5rem);
+    text-align: center;
+}
+
+section.acessar p{
+    font-size: clamp(0.8rem, 1vw, 1.5rem);
+    color: #9200be;
+    max-width: 50vw;
+    text-align: center;
+    margin-top: 10px
+}
+
+section.acessar button{
+    padding: 1rem 2rem;
+    border-radius: 40px;
+    background-color: transparent;
+    border: 2px solid #9200be;
+    color: #9200be;
+    font-size: clamp(0.8rem, 1vw, 3rem);
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+/* Estilos para a seção de login */
+section.login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: #fff 1px solid;
+    backdrop-filter: blur(20px); /* O efeito de glassmorphism em si */
+}
+
+/* Estilos para o título */
+section.login h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-family: "Pacifico", cursive;
+    color: #9200be;
+    margin-bottom: 20px;
+}
+
+/* Estilos para o formulário */
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Limita a largura do formulário */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Estilos para o campo de senha */
+#login-form input[type="text"], #login-form input[type="password"] {
+    width: 100%;
+    padding: 0.5rem 1.8rem;
+    border-radius: 40px;
+    border: 0;
+    color: #9200be;
+    font-size: clamp(0.8rem, 1vw, 3rem);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin: 0.2rem;
+    outline: 0;
+}
+
+/* Estilo do placeholder do input */
+#login-form input[type="text"]::placeholder, #login-form input[type="password"]::placeholder {
+    color: #ccc; /* Cor mais clara para o placeholder */
+}
+
+/* Estilos para o botão de entrada */
+#login-form button {
+    width: 50%;
+    padding: 0.8rem 1.8rem;
+    border-radius: 40px;
+    background-color: transparent;
+    border: 2px solid #9200be;
+    color: #9200be;
+    font-size: clamp(0.8rem, 1vw, 3rem);
+    cursor: pointer;
+    margin: 0.2rem;
+    margin-top: 30px;
+}
+
+section.chat-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: #fff 1px solid;
+    backdrop-filter: blur(20px); /* O efeito de glassmorphism em si */
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 80%; /* Força o container a ter 100% da altura disponível */
+    padding: 1rem;
+    border-radius: 40px;
+}
+
+.chat h2{
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    color: #9200be;
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-family: "Pacifico", cursive;
+}
+
+.chat-messages {
+    height: 100%;
+    flex-grow: 1; /* Faz a área de mensagens ocupar o espaço restante */
+    width: 100%;
+    padding: 10px;
+    overflow-y: auto; /* Adiciona scroll quando houver muitas mensagens */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaço entre as bolhas de mensagem */
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+/* O "trilho" (background da barra de rolagem) */
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent; /* Fundo transparente */
+}
+
+/* O "polegar" (a parte que você arrasta) */
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: rgba(146, 0, 190, 0.4); /* Cor roxa semi-transparente */
+    border-radius: 10px; /* Bordas arredondadas */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda branca para o efeito de vidro */
+}
+
+/* O "polegar" ao passar o mouse */
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(146, 0, 190, 0.6); /* Fica mais opaco ao passar o mouse */
+}
+
+/* Estilo para as bolhas de mensagem */
+.message-bubble {
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    max-width: 80%;
+    word-wrap: break-word;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px); /* Efeito de vidro para as bolhas */
+}
+
+/* Bolhas do usuário logado (alinhadas à direita) */
+.my-message {
+    align-self: flex-end;
+    background-color: #9200be; /* Fundo semi-transparente */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom-right-radius: 4px;
+}
+
+/* Bolhas do outro usuário (alinhadas à esquerda) */
+.other-message {
+    align-self: flex-start;
+    background-color: rgba(6, 6, 6, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom-left-radius: 4px;
+}
+
+/* Estilos para o formulário de envio de mensagens */
+.message-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.message-form input {
+    width: 100%;
+    padding: 0.8rem 1.8rem;
+    border-radius: 40px;
+    border: 1px solid #9200be;
+    color: #9200be;
+    font-size: clamp(0.8rem, 1vw, 3rem);
+    cursor: pointer;
+    outline: 0;
+}
+
+.message-form input::placeholder {
+    color: rgba(6, 6, 6, 0.5);
+}
+
+.message-form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(6, 6, 6, 0.2);
+}
+
+.message-form .btn-wrapper{
+    width: 10%;
+}
+
+.message-form button {
+    background-color: #9200be;
+    color: #fff;
+    border: none;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.message-form button:hover {
+    background-color: #333;
+}
+
+.message-form button svg {
+    width: clamp(0.8rem, 1.5vw, 2rem);
+    height: clamp(0.8rem, 1.5vw, 2rem);
+}
+
+
